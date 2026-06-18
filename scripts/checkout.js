@@ -1,5 +1,12 @@
 import { cart, removeFromCart } from '../data/cart.js';
 import { products } from '../data/products.js';
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+
+
+
+const today = dayjs();
+const deliveryDate = today.add(7, 'days');
+
 
 let checkoutHtml = '';
 
@@ -77,7 +84,7 @@ cart.forEach((cartItem) => {
           <div class="delivery-option">
             <input type="radio"
               class="delivery-option-input"
-              name="delivery-option-1">
+              name="delivery-option-${matchingProduct.id}">
             <div>
               <div class="delivery-option-date">
                 Monday, June 13
