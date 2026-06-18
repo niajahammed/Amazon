@@ -101,6 +101,7 @@ cart.forEach((cartItem) => {
 });
 document.querySelector('.js-order-summary').innerHTML = checkoutHtml;
 
+// For deleting a product from the checkout page :
 document.querySelectorAll('.js-delete-link').forEach((link) => {
   link.addEventListener('click', () => {
     const productId = link.dataset.productId;

@@ -1,5 +1,6 @@
 export let cart = JSON.parse(localStorage.getItem('cart'));
 
+// When no products on the cart, let's put some default products on the cart for that scenario :
 if (!cart) {
   cart = [{
     productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
@@ -10,10 +11,12 @@ if (!cart) {
   }];
 }
 
+// Save the data to the localStorage :
 function saveToStorage () {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+// For adding product to the cart : 
 export function addToCart (productId, productName) {
   let matchingItem;
 
@@ -35,6 +38,7 @@ export function addToCart (productId, productName) {
   saveToStorage();
 }
 
+// For removing a product from the cart :
 export function removeFromCart (productId) {
   let newCart = [];
 
